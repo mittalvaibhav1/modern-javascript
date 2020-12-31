@@ -10,3 +10,15 @@ const allParas = document.querySelectorAll('p'); //returns multiple elements
 console.log(allParas);
 
 allParas.forEach((para) => console.log(para)); //NodeList Array...
+
+//Other Methods... 
+
+const title = document.getElementById('page-title'); //returns a single element with given ID
+console.log(title);
+
+const errors = document.getElementsByClassName('error'); //returns an array of HTMLCollection with given class.
+console.log(errors);
+//errors.forEach((error) => console.log(error));// Cannot use forEach with HTMLCollection. Will give an error.
+
+const paras = document.getElementsByTagName('p');
+console.log(paras);
