@@ -1,19 +1,34 @@
 //!DOM  Manipulation
 
-//* Adding / Removing Classes
+//*Parents,Children & Siblings
+const article = document.querySelector('article');
+//console.log(Array.from(article.children));
 
-//* Task 1
-const paras = document.querySelectorAll('p');
-paras.forEach((para) => {
-    if(para.textContent.includes('error')) { //textContent shows content even if its hidden.
-        para.classList.add('error');
-    }
-    else if(para.innerHTML.search('success') != -1) {
-        para.classList.add('success');
-    }
+Array.from(article.children).forEach((child)=> {
+    child.classList.add('article-element')
 })
-const title = document.querySelector('h1'); 
-title.classList.toggle('hellos');
+
+const title = document.querySelector('h2');
+console.log(title.parentElement);
+console.log(title.nextElementSibling);
+console.log(title.nextElementSibling.previousElementSibling);
+
+
+
+
+//* Adding / Removing Classes
+//* Task 1
+// const paras = document.querySelectorAll('p');
+// paras.forEach((para) => {
+//     if(para.textContent.includes('error')) { //textContent shows content even if its hidden.
+//         para.classList.add('error');
+//     }
+//     else if(para.innerHTML.search('success') != -1) {
+//         para.classList.add('success');
+//     }
+// })
+// const title = document.querySelector('h1'); 
+// title.classList.toggle('hellos');
 //* classList
 // const content = document.querySelector('p.error');
 // console.log(content.classList);
