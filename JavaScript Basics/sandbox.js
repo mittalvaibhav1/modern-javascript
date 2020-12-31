@@ -1,14 +1,23 @@
 //!DOM  Manipulation
 
-//* Modify Attributes
-const link = document.querySelector('a');
-console.log(link.getAttribute('href'));
-link.setAttribute('href','https://yahoo.com');
-link.innerHTML = 'Yahoo';
 
-const msg = document.querySelector('p.error');
-msg.setAttribute('class','success');
-console.log(msg.getAttribute('class'));
+//* Changing Styles
+const title = document.querySelector('#page-title');
+console.log(title.getAttribute('style'));
+
+console.log(title.style)
+console.log(title.style.color)
+title.style.margin = '50px'
+
+//* Modify Attributes
+// const link = document.querySelector('a');
+// console.log(link.getAttribute('href'));
+// link.setAttribute('href','https://yahoo.com');
+// link.innerHTML = 'Yahoo';
+
+// const msg = document.querySelector('p.error');
+// msg.setAttribute('class','success');
+// console.log(msg.getAttribute('class'));
 
 //* .inneHTML
 // const para = document.querySelector('p');
