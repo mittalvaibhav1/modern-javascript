@@ -1,13 +1,32 @@
 //!DOM  Manipulation
 
+//* Adding / Removing Classes
+
+//* Task 1
+const paras = document.querySelectorAll('p');
+paras.forEach((para) => {
+    if(para.textContent.includes('error')) { //textContent shows content even if its hidden.
+        para.classList.add('error');
+    }
+    else if(para.innerHTML.search('success') != -1) {
+        para.classList.add('success');
+    }
+})
+const title = document.querySelector('h1'); 
+title.classList.toggle('hellos');
+//* classList
+// const content = document.querySelector('p.error');
+// console.log(content.classList);
+// content.classList.remove('error');
+// content.classList.add('success');
 
 //* Changing Styles
-const title = document.querySelector('#page-title');
-console.log(title.getAttribute('style'));
+// const title = document.querySelector('#page-title');
+// console.log(title.getAttribute('style'));
 
-console.log(title.style)
-console.log(title.style.color)
-title.style.margin = '50px'
+// console.log(title.style)
+// console.log(title.style.color)
+// title.style.margin = '50px'
 
 //* Modify Attributes
 // const link = document.querySelector('a');
