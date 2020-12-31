@@ -1,31 +1,41 @@
-//DOM  Manipulation
+//!DOM  Manipulation
 
-const para = document.querySelector('p');
-console.log(para.innerHTML);
+//* Modify Attributes
+const link = document.querySelector('a');
+console.log(link.getAttribute('href'));
+link.setAttribute('href','https://yahoo.com');
+link.innerHTML = 'Yahoo';
 
-para.innerHTML = 'Amazing hehe'
+const msg = document.querySelector('p.error');
+msg.setAttribute('class','success');
+console.log(msg.getAttribute('class'));
 
-const paras = document.querySelectorAll('p');
+//* .inneHTML
+// const para = document.querySelector('p');
+// console.log(para.innerHTML);
 
-paras.forEach((para) => {
-    console.log(para.innerHTML);
-    para.innerHTML += '  wheeeeeeeee' 
-})
+// para.innerHTML = 'Amazing hehe'
 
-const content = document.querySelector('div.error');
-console.log(content.innerHTML);
-content.innerHTML += "<h2> Hello, How are you today?";
+// const paras = document.querySelectorAll('p');
 
-const people = ['mario','luigi','yoshi'];
+// paras.forEach((para) => {
+//     console.log(para.innerHTML);
+//     para.innerHTML += '  wheeeeeeeee' 
+// })
 
-people.forEach(person => {
-    content.innerHTML += `<p>${person}</p>`
-})
+// const content = document.querySelector('div.error');
+// console.log(content.innerHTML);
+// content.innerHTML += "<h2> Hello, How are you today?";
 
+// const people = ['mario','luigi','yoshi'];
 
+// people.forEach(person => {
+//     content.innerHTML += `<p>${person}</p>`
+// })
 
-//To Query the DOM
+//!To Query the DOM
 
+//* Query Selector
 // const para = document.querySelector('p'); //returns a single element
 // //Returns the first element that matches the query
 // console.log(para);
@@ -39,7 +49,7 @@ people.forEach(person => {
 
 // allParas.forEach((para) => console.log(para)); //NodeList Array...
 
-// //Other Methods... 
+// *Other Methods... 
 
 // const title = document.getElementById('page-title'); //returns a single element with given ID
 // console.log(title);
