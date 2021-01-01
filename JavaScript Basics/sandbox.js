@@ -1,23 +1,60 @@
 //!DOM  Manipulation
 
-//* Create and Remove Elements
+//* Event Bubling and Deligation
+// const items = document.querySelectorAll('li');
+// items.forEach((item) => {
+//     item.addEventListener('click', (e) => { // Adds an event to the element referenced
+//         e.target.remove(); // the event will bubble up and those events will also get triggered which are 
+//         //associated with the parent element and all the parents in the heirarchy upwards.
+//         // To Prevent This
+//         e.stopPropagation();
+//         // Even if we dont add the event listner here, it would still bubble up!!!!!
+//     })
+// })
+
+//* Deligation //Beacuse of bubbling! damn
 const ul = document.querySelector('ul');
-// ul.remove()
 
 const button = document.querySelector('button');
 button.addEventListener('click', () => {
     const li = document.createElement('li');
     li.textContent = 'Something newww..';
     ul.append(li);
-    ul.prepend(li);
 });
 
-const items = document.querySelectorAll('li');
-items.forEach((item) => {
-    item.addEventListener('click', (e) => { // Adds an event to the element referenced
+// ul.addEventListener('click' , e => {
+//     console.log(e.target); // if i click on any li the event will bubble up
+//     // and trigger the event listner of the ul and e.target will print li
+//     //even though no event listner has been attached to the li !!!!
+// })
+
+ul.addEventListener('click' , e => {
+    if(e.target.tagName === 'LI') {
         e.target.remove();
-    })
+    }
 })
+
+
+
+
+//* Create and Remove Elements
+// const ul = document.querySelector('ul');
+// // ul.remove()
+
+// const button = document.querySelector('button');
+// button.addEventListener('click', () => {
+//     const li = document.createElement('li');
+//     li.textContent = 'Something newww..';
+//     ul.append(li);
+//     ul.prepend(li);
+// });
+
+// const items = document.querySelectorAll('li');
+// items.forEach((item) => {
+//     item.addEventListener('click', (e) => { // Adds an event to the element referenced
+//         e.target.remove();
+//     })
+// })
 
 
 //* Eventsss
