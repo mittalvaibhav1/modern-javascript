@@ -1,16 +1,35 @@
 //!DOM  Manipulation
 
-//* Eventsss
+//* Create and Remove Elements
+const ul = document.querySelector('ul');
+// ul.remove()
+
 const button = document.querySelector('button');
-button.addEventListener('click', () => console.log('clicked hehe'));
+button.addEventListener('click', () => {
+    const li = document.createElement('li');
+    li.textContent = 'Something newww..';
+    ul.append(li);
+    ul.prepend(li);
+});
 
 const items = document.querySelectorAll('li');
 items.forEach((item) => {
     item.addEventListener('click', (e) => { // Adds an event to the element referenced
-        e.target.style.textDecoration = 'line-through'
+        e.target.remove();
     })
 })
 
+
+//* Eventsss
+// const button = document.querySelector('button');
+// button.addEventListener('click', () => console.log('clicked hehe'));
+
+// const items = document.querySelectorAll('li');
+// items.forEach((item) => {
+//     item.addEventListener('click', (e) => { // Adds an event to the element referenced
+//         e.target.style.textDecoration = 'line-through'
+//     })
+// })
 
 
 //*Parents,Children & Siblings
