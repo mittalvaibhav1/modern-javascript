@@ -1,5 +1,27 @@
 //!DOM  Manipulation
 
+//* More DOM events!
+//*Copy event
+
+const copy = document.querySelector('.copy-me');
+
+copy.addEventListener('copy',(e) =>{
+    e.preventDefault(); // To Stop them from copying!! YAY!
+    console.log('OI! mattt karrr')
+})
+
+const box = document.querySelector('.box');
+
+box.addEventListener('mousemove',(e) => {
+    console.log(e);
+    box.textContent = `(${e.offsetX},${e.offsetY})`
+})
+
+document.addEventListener('wheel',(e) => {
+    console.log(hi);
+})
+
+
 //* Event Bubling and Deligation
 // const items = document.querySelectorAll('li');
 // items.forEach((item) => {
@@ -13,28 +35,26 @@
 // })
 
 //* Deligation //Beacuse of bubbling! damn
-const ul = document.querySelector('ul');
+// const ul = document.querySelector('ul');
 
-const button = document.querySelector('button');
-button.addEventListener('click', () => {
-    const li = document.createElement('li');
-    li.textContent = 'Something newww..';
-    ul.append(li);
-});
+// const button = document.querySelector('button');
+// button.addEventListener('click', () => {
+//     const li = document.createElement('li');
+//     li.textContent = 'Something newww..';
+//     ul.append(li);
+// });
+
+// // ul.addEventListener('click' , e => {
+// //     console.log(e.target); // if i click on any li the event will bubble up
+// //     // and trigger the event listner of the ul and e.target will print li
+// //     //even though no event listner has been attached to the li !!!!
+// // })
 
 // ul.addEventListener('click' , e => {
-//     console.log(e.target); // if i click on any li the event will bubble up
-//     // and trigger the event listner of the ul and e.target will print li
-//     //even though no event listner has been attached to the li !!!!
+//     if(e.target.tagName === 'LI') {
+//         e.target.remove();
+//     }
 // })
-
-ul.addEventListener('click' , e => {
-    if(e.target.tagName === 'LI') {
-        e.target.remove();
-    }
-})
-
-
 
 
 //* Create and Remove Elements
