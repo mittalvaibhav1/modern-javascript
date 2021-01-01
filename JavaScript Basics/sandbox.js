@@ -1,19 +1,30 @@
 //!DOM  Manipulation
 
-//*Parents,Children & Siblings
-const article = document.querySelector('article');
-//console.log(Array.from(article.children));
+//* Eventsss
+const button = document.querySelector('button');
+button.addEventListener('click', () => console.log('clicked hehe'));
 
-Array.from(article.children).forEach((child)=> {
-    child.classList.add('article-element')
+const items = document.querySelectorAll('li');
+items.forEach((item) => {
+    item.addEventListener('click', (e) => { // Adds an event to the element referenced
+        e.target.style.textDecoration = 'line-through'
+    })
 })
 
-const title = document.querySelector('h2');
-console.log(title.parentElement);
-console.log(title.nextElementSibling);
-console.log(title.nextElementSibling.previousElementSibling);
 
 
+//*Parents,Children & Siblings
+// const article = document.querySelector('article');
+// console.log(Array.from(article.children)); // returns HTMLCollection of children
+
+// Array.from(article.children).forEach((child)=> {
+//     child.classList.add('article-element')
+// })
+
+// const title = document.querySelector('h2');
+// console.log(title.parentElement);
+// console.log(title.nextElementSibling);
+// console.log(title.nextElementSibling.previousElementSibling);
 
 
 //* Adding / Removing Classes
@@ -35,6 +46,7 @@ console.log(title.nextElementSibling.previousElementSibling);
 // content.classList.remove('error');
 // content.classList.add('success');
 
+
 //* Changing Styles
 // const title = document.querySelector('#page-title');
 // console.log(title.getAttribute('style'));
@@ -42,6 +54,7 @@ console.log(title.nextElementSibling.previousElementSibling);
 // console.log(title.style)
 // console.log(title.style.color)
 // title.style.margin = '50px'
+
 
 //* Modify Attributes
 // const link = document.querySelector('a');
@@ -52,6 +65,7 @@ console.log(title.nextElementSibling.previousElementSibling);
 // const msg = document.querySelector('p.error');
 // msg.setAttribute('class','success');
 // console.log(msg.getAttribute('class'));
+
 
 //* .inneHTML
 // const para = document.querySelector('p');
@@ -76,6 +90,7 @@ console.log(title.nextElementSibling.previousElementSibling);
 //     content.innerHTML += `<p>${person}</p>`
 // })
 
+
 //!To Query the DOM
 
 //* Query Selector
@@ -92,8 +107,8 @@ console.log(title.nextElementSibling.previousElementSibling);
 
 // allParas.forEach((para) => console.log(para)); //NodeList Array...
 
-// *Other Methods... 
 
+// *Other Methods... 
 // const title = document.getElementById('page-title'); //returns a single element with given ID
 // console.log(title);
 
