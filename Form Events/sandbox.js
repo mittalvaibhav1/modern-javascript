@@ -1,21 +1,29 @@
 const form = document.querySelector('.signup-form');
 //const username = document.querySelector('#username'); not necessary.
 //can get reference to all the fields if they have an ID or name, using the reference to the form!
+const feedback = document.querySelector('.feedback');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(form.username.value);
+    const username = form.username.value;
+    const pattern = /^[a-zA-Z]{6,12}$/;
+    if(pattern.test(username)) {
+        feedback.innerHTML = 'yeh bhe theek hai';
+    } else {
+        feedback.innerHTML = 'arey mat karooooo';
+    }
+
 });
 
-const username = 'hihellolisten'
-const pattern = /^[a-z]{6,}$/;
+// const username = 'hihellolisten'
+// const pattern = /^[a-z]{6,}$/;
 
-let result = pattern.test(username); // return boolean
-// test if the parameter matches the regEX
+// let result = pattern.test(username); // return boolean
+// // test if the parameter matches the regEX
 
-console.log(result);
+// console.log(result);
 
-let res = username.search(pattern);  
-// returns the index where pattern is found
+// let res = username.search(pattern);  
+// // returns the index where pattern is found
 
-console.log(res); 
+// console.log(res); 
