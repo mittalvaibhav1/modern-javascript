@@ -1,44 +1,66 @@
+//! Chaining Array Methods
+
+const products = [
+    {name: 'gold star' , price: 30},
+    {name: 'green sheel' , price: 10},
+    {name: 'red shell' , price: 40},
+    {name: 'banana skin' , price: 5},
+    {name: 'mushroom' , price: 50},
+];
+
+const result = products.filter((product) => {
+    return product.price > 20;
+})
+.map((product) => {
+    return {
+        ...product,
+        price: product.price > 30 ? product.price / 2 : product.price
+    }
+});
+
+console.log(result);
+
+
 //! Sort
 
 //* Strings
 
-const names = ['mario', 'shaun', 'chun-li', 'yoshi', 'luigi'];
+// const names = ['mario', 'shaun', 'chun-li', 'yoshi', 'luigi'];
 
-names.sort(); // manipulates the orignal array
-names.reverse(); // to reverse the array
+// names.sort(); // manipulates the orignal array
+// names.reverse(); // to reverse the array
 
-console.log(names); // sorts lexographically
+// console.log(names); // sorts lexographically
 
 //* Numbers
 
-const scores = [10, 50, 20, 5, 25, 70, 45];
+// const scores = [10, 50, 20, 5, 25, 70, 45];
 
-scores.sort(); // still sorts lexographically!!!
+// scores.sort(); // still sorts lexographically!!!
 
-console.log(scores);
+// console.log(scores);
 
-scores.sort((a,b) => {
-    return a - b;
-});
+// scores.sort((a,b) => {
+//     return a - b;
+// });
 
-console.log(scores); // sorts normally!
+// console.log(scores); // sorts normally!
 
 //* Objects
 
-const players = [
-    {name: 'mario' , score: 20},
-    {name: 'luigi' , score: 10},
-    {name: 'chun-li' , score: 50},
-    {name: 'yoshi' , score: 30},
-    {name: 'shaun' , score: 70}
-];
+// const players = [
+//     {name: 'mario' , score: 20},
+//     {name: 'luigi' , score: 10},
+//     {name: 'chun-li' , score: 50},
+//     {name: 'yoshi' , score: 30},
+//     {name: 'shaun' , score: 70}
+// ];
 
-players.sort((a,b) => {
-    return b.score - a.score;
-});
+// players.sort((a,b) => {
+//     return b.score - a.score;
+// });
 
-console.log(players);
-
+// console.log(players);
 
 //! Find
 
