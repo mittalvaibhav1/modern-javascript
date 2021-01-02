@@ -1,10 +1,54 @@
-const scores = [10, 5, 0, 40, 60, 10, 20, 70];
+//! Sort
 
-const result = scores.find((score) => {
-    return score > 50;
+//* Strings
+
+const names = ['mario', 'shaun', 'chun-li', 'yoshi', 'luigi'];
+
+names.sort(); // manipulates the orignal array
+names.reverse(); // to reverse the array
+
+console.log(names); // sorts lexographically
+
+//* Numbers
+
+const scores = [10, 50, 20, 5, 25, 70, 45];
+
+scores.sort(); // still sorts lexographically!!!
+
+console.log(scores);
+
+scores.sort((a,b) => {
+    return a - b;
 });
 
-console.log(result);
+console.log(scores); // sorts normally!
+
+//* Objects
+
+const players = [
+    {name: 'mario' , score: 20},
+    {name: 'luigi' , score: 10},
+    {name: 'chun-li' , score: 50},
+    {name: 'yoshi' , score: 30},
+    {name: 'shaun' , score: 70}
+];
+
+players.sort((a,b) => {
+    return b.score - a.score;
+});
+
+console.log(players);
+
+
+//! Find
+
+// const scores = [10, 5, 0, 40, 60, 10, 20, 70];
+
+// const result = scores.find((score) => {
+//     return score > 50;
+// });
+
+// console.log(result);
 
 //! Reduce
 
