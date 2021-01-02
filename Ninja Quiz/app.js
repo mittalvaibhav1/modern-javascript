@@ -10,8 +10,20 @@ form.addEventListener('submit', (e) => {
         if(ans === correctAnswers[index]) score += 25;
     });
     result.classList.remove('d-none');
-    result.querySelector('span').textContent = `${score}%`;
     window.scrollTo(0,0); // or simply scrollTo(0,0) as window is inferred
+    // setInterval will be fired every 1 second.
+    // setTimeout will be fired once after delay.
+    let output = 0;
+    const timer = setInterval(() => {
+        result.querySelector('span').textContent = `${output}%`;
+        if(output === score) {
+            clearInterval(timer); // to stop the interval
+        }
+        else {
+            output += 1;
+        }
+    },10);
+
 });
 
 
