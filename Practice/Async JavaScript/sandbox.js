@@ -1,20 +1,36 @@
 
+// Async Await
+
+const getTodos = async () => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todoos/');
+    if(!response.ok) throw new Error(response.status + ' bhidu' );
+    const data = await response.json();
+    return data;
+};
+
+getTodos().then((response) => {
+    console.log(response);
+})
+.catch((error) => {
+    console.log(error);
+});
+
 //Fetch API
 
-fetch('https://jsonplaceholder.typicode.com/todos/')
-.then((response) => {
-    if(response.ok) {
-        return response;
-    }
-    else {
-        let error = Error('Error: ' + response.status + ' ' + response.statusText);
-        error.response = response;
-        throw error;
-    }
-})
-.then(response => response.json())
-.then(response => console.log(response))
-.catch(error => console.log(error.message));
+// fetch('https://jsonplaceholder.typicode.com/todos/')
+// .then((response) => {
+//     if(response.ok) {
+//         return response;
+//     }
+//     else {
+//         let error = Error('Error: ' + response.status + ' ' + response.statusText);
+//         error.response = response;
+//         throw error;
+//     }
+// })
+// .then(response => response.json())
+// .then(response => console.log(response))
+// .catch(error => console.log(error.message));
 
 
 // Promises
