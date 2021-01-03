@@ -1,27 +1,30 @@
 
+// Promises
+const getTodos = () => {
+    return new Promise((resolve,reject) => {
 
-const getTodos = (callback) => {
-    const request = new XMLHttpRequest();
-    request.open('GET','https://jsonplaceholder.typicode.com/todos/');
-    request.send();
-    request.addEventListener('readystatechange', () => {
-        if(request.readyState === 4 && request.status === 200) {
-            callback(undefined,request.responseText);
-        }
-        else if(request.readyState === 4) {
-            callback('could not fetch data' , undefined);
-        }
-    });
+        const request = new XMLHttpRequest();
+        request.open('GET','https://jsonplaceholder.typicode.com/todos/');
+        request.send();
+        request.addEventListener('readystatechange', () => {
+            if(request.readyState === 4 && request.status === 200) {
+                const data = JSON.parse(request.responseText);
+                resolve(data);
+            }
+            else if(request.readyState === 4) {
+                reject('could not fetch data');
+            }
+        });
+    })
 }
 
-getTodos((err , data) => {
-    if(err) {
-        console.log(err);
-    }
-    else {
-        console.log(data)
-    }
-});
+getTodos()
+.then(response => {
+    console.log("response",response);
+})
+.catch(error => {
+    console.log(error);
+})
 
 // const request = new XMLHttpRequest();
 
