@@ -1,3 +1,23 @@
+//! Date Fns library
+
+const now = new Date();
+console.log(dateFns.isToday(now));
+
+//* Formatting Options
+
+console.log(dateFns.format(now,'YYYY'));
+console.log(dateFns.format(now,'MMM'));
+console.log(dateFns.format(now,'dddd'));
+console.log(dateFns.format(now,'Do'));
+console.log(dateFns.format(now,'dddd, Do, MMMM, YYYY'));
+
+//* Compare Dates
+
+const before= new Date('Jan 20 2010');
+console.log(dateFns.distanceInWords(now,before , {addSuffix: true}));
+
+//! Clock
+
 const clock = document.querySelector('.clock');
 
 const tick = () => {
