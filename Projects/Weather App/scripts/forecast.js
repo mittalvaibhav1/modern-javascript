@@ -1,5 +1,5 @@
+let key = 'ENTER_YOUR_KEY';
 
-const key = 'ENTER_YOUR_KEY';
 
 const getCity = async (city) => {
     const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
@@ -22,5 +22,5 @@ const getWeather = async(id) => {
     const response = await fetch(base + query);
     if(!response.ok) throw new Error(response.status + " " + response.statusText);
     const data = await response.json();
-    return data;
+    return data[0];
 }
