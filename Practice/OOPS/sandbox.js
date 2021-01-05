@@ -5,11 +5,10 @@
 function User(username,email) {
     this.username = username;
     this.email = email;
-    this.login = () => {
-        console.log("Helloooo");
-    }
 }
-
+User.prototype.login = function() {
+    console.log(this.username + "Logged in");
+}
 const user1 = new User('Mario', 'mario@mamamia.net'); // Instance
 console.log(user1);
 user1.login();
@@ -18,7 +17,11 @@ user1.login();
 const user2 = new User('Luigi', 'itsluigi@mamamia.net'); // Instance
 console.log(user2);
 
-// Prototype Model
+
+// Prototype Model // Every object in javaScript has a protoype
+// prototype contians all the methods for that object type
+
+
 
 
 
