@@ -40,11 +40,11 @@ class User {
         console.log(`${this.username} just logged in`);
         return this;
     }
-    logout = () => {
+    logout()  {
         console.log(`${this.username} just logged out`);
         return this;
     }
-    incScore = () => {
+    incScore () {
         this.score += 1;
         console.log(`${this.username} has a score of ${this.score}`);
         return this;
@@ -65,4 +65,26 @@ console.log(user2);
 user2.login();
 user2.logout();
 
+// Sub classes
 
+class Admin extends User {
+    constructor(username,email,role) {
+        super(username,email);
+        this.role = role;
+    }
+    deleteUser(user) {
+        users = users.filter((u) => {
+            return u.username != user.username;
+        })
+    }
+}
+
+const user3 = new Admin('yoshi','yoshiboi@mamamia.net','mentor');
+console.log(user3);
+
+let users = [user1,user2,user3];
+console.log(users);
+
+user3.deleteUser(user2);
+
+console.log(users);
