@@ -1,4 +1,12 @@
+// Symbols // Primitive data type
+//  No two symbols are ever going to be the same
+// They might look the same but they are all different;
+// Can be used as a key
 
+const symbolOne = Symbol();
+const symbolTwo = Symbol();
+
+console.log(symbolOne,symbolTwo,symbolOne === symbolTwo)
 
 // Sets
 
