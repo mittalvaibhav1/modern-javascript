@@ -21,7 +21,19 @@ console.log(user2);
 // Prototype Model // Every object in javaScript has a protoype
 // prototype contians all the methods for that object type
 
+//Prototype inheritance
 
+function Admin(username,email,role) {
+    User.call(this,username,email);
+    this.role = role;
+}
+
+Admin.prototype = Object.create(User.prototype);
+Admin.prototype.del = function() {
+    console.log('Hi');
+}
+const user3 = new Admin('yoshi','abc@def.com','mentor'); 
+console.log(user3);
 
 
 
