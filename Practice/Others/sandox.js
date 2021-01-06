@@ -1,3 +1,35 @@
+
+
+// Sets
+
+const namesArray = ['ryu', 'chun-li' , 'ryu', 'shaun'];
+
+console.log(namesArray);
+
+const namesSet = new Set(namesArray); // Only way to create a set
+
+console.log(namesSet);
+
+const uniqueNames = [...namesSet];
+
+console.log(uniqueNames);
+
+// Or
+
+const uniqueNames2 = [...new Set(namesArray)];
+
+console.log(uniqueNames2);
+
+const ages = new Set();
+
+ages.add(1); 
+ages.add(2).add(4); // to add elements into a set
+ages.delete(2);
+console.log(ages,ages.size); // Insetad of .length it has .size
+console.log(ages.has(25)); // Boolean value if has that value or not
+
+ages.clear(); // to empty it
+
 // Rest parameter
 // Bundle up arguents inside a function into a single array parameter
 
@@ -6,18 +38,18 @@ const double = (...nums) => {
     return double;
 }
 
-console.log(double(1,2,3,4,5,6,7,8,9,10));
+//console.log(double(1,2,3,4,5,6,7,8,9,10));
 
 // Spread syntax (Arrays)
 // Spread them into their individual components
 
 const people = ['shaun' , 'ryu' , 'crystal'];
 
-console.log(...people);
+//console.log(...people);
 
 const memebers = ['mario' , 'luigi', ...people];
 
-console.log(memebers);
+//console.log(memebers);
 
 // Spread syntax (Objects)
 
@@ -29,5 +61,5 @@ const person = {
 
 const personClone = {...person}; // Entirely new copy!
 
-console.log(personClone);
+//console.log(personClone);
 
