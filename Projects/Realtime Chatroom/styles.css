@@ -13,3 +13,10 @@ body {
 .btn:focus {
     outline: none !important;
 }
+.username {
+    font-weight: bold;
+}
+.time {
+    font-size: 0.9em;
+    color: #999;
+}
