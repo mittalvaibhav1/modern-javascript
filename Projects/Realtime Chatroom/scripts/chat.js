@@ -19,7 +19,7 @@ class Chatroom {
     getChats(callback) {
         this.unsub = this.chats
         .where('room','==',this.room) //Conditional snapshot , where(property,condition,value)
-        //.orderBy('created_at') 
+        .orderBy('created_at') 
         .onSnapshot((snapshot) => {
             snapshot.docChanges().forEach(change => {
                 const doc = change.doc;
@@ -31,6 +31,7 @@ class Chatroom {
     }
     updateName(username) {
         this.username = username;
+        localStorage.setItem('username',username);
     }
     updateRoom(room) {
         this.room = room;

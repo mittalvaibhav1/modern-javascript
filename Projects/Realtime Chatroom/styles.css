@@ -20,3 +20,7 @@ body {
     font-size: 0.9em;
     color: #999;
 }
+.update-msg {
+    text-align: center;
+    margin: 20px auto;
+}
