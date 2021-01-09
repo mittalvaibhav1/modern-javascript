@@ -39,9 +39,9 @@ class Chatroom {
     }
 }
 
-const chatroom = new Chatroom('gaming', 'boyle');
+//const chatroom = new Chatroom('gaming', 'boyle');
 
- 
-// chatroom.addChat('Hellooo')
+
+// chatroom.addChat('Whaddup people')
 //     .then(() => console.log('Chat Added'))
 //     .catch((error) => console.log(error.message));
